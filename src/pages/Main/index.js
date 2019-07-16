@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { FaGithubAlt, FaPlus, FaSpinner, FaTimes, FaEye } from 'react-icons/fa';
 
 import api from '../../services/api';
 
-import { Container, Form, SubmitButton, List, ActionList } from './styles';
+import Container from '../../components/Container';
+import { Form, SubmitButton, List, ActionList } from './styles';
 
 export default class Main extends Component {
   state = {
@@ -106,12 +108,15 @@ export default class Main extends Component {
               <span>{repository.name}</span>
 
               <ActionList>
-                <a href="#" onClick={() => this.handleDelete(repository)}>
+                <a onClick={() => this.handleDelete(repository)}>
                   <FaTimes color="#700" size={14} />
                 </a>
-                <a href="/" tooltip="Detalhes">
+                <Link
+                  to={`/repository/${encodeURIComponent(repository.name)}`}
+                  tooltip="Detalhes"
+                >
                   <FaEye color="#75B" size={14} />
-                </a>
+                </Link>
               </ActionList>
             </li>
           ))}
