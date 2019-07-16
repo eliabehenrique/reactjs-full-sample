@@ -46,7 +46,7 @@ const rotate = keyframes`
 
 export const SubmitButton = styled.button.attrs(props => ({
   type: 'submit',
-  disabled: props.loading,
+  disabled: props.onload,
 }))`
   background: #7159c1;
   border: 0;
@@ -73,4 +73,37 @@ export const SubmitButton = styled.button.attrs(props => ({
         animation: ${rotate} 2s infinite;
       }
     `}
+`;
+
+export const List = styled.ul`
+  list-style: none;
+  margin-top: 30px;
+
+  li {
+    padding: 15px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    & + li {
+      border-top: 1px solid #eee;
+    }
+
+    a {
+      color: #7159c1;
+    }
+  }
+`;
+
+export const ActionList = styled.nav`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+
+  a {
+    margin-left: 5px;
+    cursor: pointer;
+  }
 `;
