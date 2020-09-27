@@ -1,4 +1,4 @@
-## ReactJs - Get Repositories from Github API with details and issues
+## ReactJs - Get Repositories from Github API with details and issues (FlexBox & Styled Components)
 
 **Pre-requisites**
 - install [Nodejs](https://nodejs.org/pt-br/download/)
